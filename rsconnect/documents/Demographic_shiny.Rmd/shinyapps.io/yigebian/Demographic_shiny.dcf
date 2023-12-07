@@ -1,0 +1,12 @@
+name: Demographic_shiny
+title: Demographic_shiny
+username: yigebian
+account: yigebian
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10740735
+bundleId: 8018634
+url: https://yigebian.shinyapps.io/Demographic_shiny/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
