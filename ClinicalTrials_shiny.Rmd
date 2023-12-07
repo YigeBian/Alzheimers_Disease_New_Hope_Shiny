@@ -75,7 +75,7 @@ Column {.sidebar}
 -----------------------------------------------------------------------
 ```{r }
 
-radioButtons("phase_type", label = h3("Select study design"), choices = sort(unique(pull(CT_final_data, phases))), select = "Phase 3/Phase 4")
+radioButtons("phase_type", label = h3("Select study design"), choices = sort(unique(pull(CT_final_data, phases))), select = "Phase 1/Phase 2")
 
 State = state.name
 checkboxGroupInput("State", label = h3("Select State"), choices = State, selected = State)
