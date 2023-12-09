@@ -8,7 +8,6 @@ runtime: shiny
 ---
 ```{r setup, include=FALSE}
 library(flexdashboard)
-
 library(tidyverse)
 library(readxl)
 library(plotly)
@@ -16,7 +15,6 @@ library(ggplot2)
 library(shiny)
 library(leaflet)
 ```
-
 
 ```{r read data, include = FALSE}
 data = 
@@ -54,7 +52,6 @@ city_coor =
   select(city, state_name, latitude, longitude) |>
   mutate(locations = paste(city, state_name))
 
-### Attentiaon!!!! Na are dropped here due to incomplete list of coor_cities, should try to solve this prob
 CT_final_data = left_join(CT_loc_clean, city_coor, by = "locations") |>
   drop_na(state_name) |>
   select(-city.y, -state_name, -locations) |>
@@ -74,7 +71,6 @@ CT_final_data = left_join(CT_loc_clean, city_coor, by = "locations") |>
 Column {.sidebar}
 -----------------------------------------------------------------------
 ```{r }
-
 radioButtons("phase_type", label = h3("Select study design"), choices = sort(unique(pull(CT_final_data, phases))), select = "Phase 1/Phase 2")
 
 State = state.name
@@ -91,15 +87,15 @@ match_state = function(element, state_choice) {
     FALSE}}
 
 LeafletInput <- reactive({
-  CT_final_data %>%
-    mutate(state = map(state, match_state, input$State)) %>%
+  CT_final_data |>
+    mutate(state = map(state, match_state, input$State)) |>
   filter(state == TRUE, phases == input$phase_type)
 })
 
   renderLeaflet({
-  LeafletInput() %>% 
-  leaflet() %>%
-  addTiles() %>%
+  LeafletInput() |>
+  leaflet() |>
+  addTiles() |>
   addMarkers(clusterOptions = markerClusterOptions(), popup = ~as.character(url))})
         
 ```

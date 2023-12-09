@@ -1,0 +1,12 @@
+name: ClinicalTrials_shiny
+title: ClinicalTrials_shiny
+username: yigebian
+account: yigebian
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10740755
+bundleId: 8028119
+url: https://yigebian.shinyapps.io/ClinicalTrials_shiny/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

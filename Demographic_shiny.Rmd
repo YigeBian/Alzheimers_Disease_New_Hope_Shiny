@@ -6,9 +6,8 @@ output:
 runtime: shiny
 ---
 
-```{r, include = FALSE, message = FALSE, warning = FALSE}
+```{r, include = FALSE}
 library(flexdashboard)
-
 library(shiny)
 library(readxl)
 library(tidyverse)
@@ -56,8 +55,6 @@ radioButtons(
   "geo_type", 
   label = h3("Select Category"),
   choices = geo_type, selected = "Death rate")
-
-
 ```
 
 Row
